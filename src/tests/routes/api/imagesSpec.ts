@@ -1,19 +1,17 @@
 // import images api
-import ImagesApi from '../../../routes/api/images.js';
-import supertest from 'supertest';
+import Validate from '../../../routes/api/images.js';
 
 // test all functions in api/images.ts
 
-describe('Test Images API', () => {
-  
-it('should validate filename', () => {
-  const filename:string = 'test.png';
-  expect(ImagesApi.validateFileName(filename)).toBe(true);
-});
+describe('Validate given parameters', () => {
+  it('should validate filename', () => {
+    const filename = 'test.png';
+    expect(Validate.validateFileName(filename)).toBe(true);
+  });
 
-it('should validate width and height', () => {
-  const width:number = 100;
-  const height:number = -100;
-  expect(ImagesApi.validateWidthAndHeight(width,height)).toBe(false);
-}); 
+  it('should validate width and height', () => {
+    const width = 100;
+    const height = -100;
+    expect(Validate.validateWidthAndHeight(width, height)).toBe(false);
+  });
 });

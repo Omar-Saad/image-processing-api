@@ -10,5 +10,4 @@ app.listen(Constants.PORT, () => {
   console.log(`Example app listening at http://localhost:${Constants.PORT}`);
 });
 
-
 export default app;
